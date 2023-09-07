@@ -1,0 +1,88 @@
+main {
+    flex: 1;
+    margin: 10px;
+}
+
+.listImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.listItemWrapper {
+    background-color: #e2e2e2;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.title {
+    margin-bottom: 6px;
+}
+
+span.large {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+.expandButton {
+    margin-left: auto;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.subtitle span {
+    margin-right: 16px;
+}
+
+.listItem {
+    display: flex;
+}
+
+.detailImage {
+    width: 200px;
+    height: calc(200px * 9/16);
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.details {
+    padding: 10px;
+    margin-top: 16px;
+}
+
+.header {
+    display: flex;
+
+    .addButton {
+        margin-left: auto;
+
+    }
+}
+
+.button {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background-color: blue;
+    color: white;
+}
+
+.deleteButton {
+    background-color: red;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 10px;
+    margin-top: 20px;
+}

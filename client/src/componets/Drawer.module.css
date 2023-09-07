@@ -1,0 +1,30 @@
+.drawer {
+    width: 300px;
+    height: 100vh;
+}
+
+li {
+    margin: 10px;
+
+    >a {
+        display: block;
+        background-color: gray;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+
+        &.active {
+            background-color: blue;
+            color: white;
+        }
+    }
+
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 22px;
+    width: 36px;
+}
