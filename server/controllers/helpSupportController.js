@@ -4,10 +4,11 @@ const userModel = require("../models/userModel");
 const createhelpSupport = async (req, res) => {
     try {
         let helpSupportData = req.body;
+        console.log(helpSupportData);
 
         let { customerId } = helpSupportData;
 
-        const userExist = await userModel.findById({ customerId: customerId });
+        const userExist = await userModel.findById({ _id: customerId });
 
         if (!userExist) {
             return res.status(400).send({ status: false, message: "Partner/Customer not found" });

@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
+const helpSupportController = require("../controllers/helpSupportController");
+const offerController = require("../controllers/offerController");
 
 //USER
 router.post("/register", userController.registerUser);
@@ -9,16 +11,17 @@ router.get('/user', userController.getAllUsers)
 router.put('/user/:userId', userController.UpdateUser)
 router.delete('/user/:userId', userController.deleteUser)
 
-//PRODUCT
-// router.post("/products",aws.awsProduct, productController.createProduct);
+//ISSUES
+router.post("/issue", helpSupportController.createhelpSupport);
+router.get("/issues", helpSupportController.getAllhelpSupport);
 // router.get("/products", productController.getProduct);
 // router.get('/products/:productId', productController.getProductById)
 // router.put('/products/:productId',aws.awsUpdate, productController.updateProduct)
 // router.delete('/products/:productId',  productController.deleteProduct)
 
-// //Cart
-// router.post("/users/:userId/cart", auth.authentication, auth.authorization, cartController.createCart);
-// router.put("/users/:userId/cart", auth.authentication, auth.authorization, cartController.updateCart);
+// //Offers
+router.post("/offer", offerController.createOffer);
+router.get("/offers", offerController.getAllOffer);
 // router.get("/users/:userId/cart", auth.authentication, auth.authorization, cartController.getCart);
 // router.delete("/users/:userId/cart", auth.authentication, auth.authorization, cartController.deleteCart);
 

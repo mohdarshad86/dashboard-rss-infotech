@@ -7,7 +7,7 @@ const createOffer = async (req, res) => {
 
         let { partnerId } = offerData;
 
-        const userExist = await userModel.findById({ partnerId: partnerId });
+        const userExist = await userModel.findById({ _id: partnerId });
 
         if (!userExist) {
             return res.status(400).send({ status: false, message: "Partner/Customer not found" });

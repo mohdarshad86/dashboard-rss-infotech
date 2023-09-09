@@ -3,18 +3,18 @@ const userModel = require("../models/userModel");
 const registerUser = async (req, res) => {
     try {
         let userData = req.body;
-
+        console.log(userData);
         let { email, mobile } = userData;
 
-        const userExist = await userModel.findOne({ $or: [{ email: email }, { mobile: mobile }] });
+        // const userExist = await userModel.findOne({ $or: [{ email: email }, { mobile: mobile }] });
 
-        if (userExist) {
-            if (userExist.email == email)
-                return res.status(400).send({ status: false, message: "email id  already exist, send another email" });
-console.log(userExist.mobile , mobile);
-            if (userExist.mobile == mobile)
-                return res.status(400).send({ status: false, message: "mobile  already exist, send another mobile number" });
-        }
+        // if (userExist) {
+        //     if (userExist.email == email)
+        //         return res.status(400).send({ status: false, message: "email id  already exist, send another email" });
+        //     console.log(userExist.mobile, mobile);
+        //     if (userExist.mobile == mobile)
+        //         return res.status(400).send({ status: false, message: "mobile  already exist, send another mobile number" });
+        // }
 
         const userCreated = await userModel.create(userData);
 

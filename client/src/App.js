@@ -6,6 +6,7 @@ import Footer from './componets/Footer';
 import Users from './componets/Users';
 import HelpSupport from './componets/HelpSupport';
 import Home from './componets/Home';
+import Offers from './componets/Offers';
 
 function App() {
   return (
@@ -16,9 +17,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} exact />
           <Route path='/user' element={<Users />} exact />
-          <Route path='/help' element={<HelpSupport />} exact>
-
-          </Route>
+          <Route path='/help' element={<HelpSupport />} exact/>
+          <Route path='/offers' element={<Offers />} exact/>
         </Routes>
       </div>
       <Footer />

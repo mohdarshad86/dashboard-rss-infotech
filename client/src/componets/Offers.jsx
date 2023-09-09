@@ -2,24 +2,25 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './Main.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdd, faCommentDots} from '@fortawesome/free-solid-svg-icons';
+import { faAdd, faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 const BASE_URL = 'http://localhost:3001'
 
-const HelpSupport = () => {
-    const [issues, setIssues] = useState([])
-    const getIssues = async () => {
-        const response = await axios.get(`${BASE_URL}/issues`)
+const Offers = () => {
+    const [offers, setoOffer] = useState([]);
+   
+    const getOffers = async () => {
+        const response = await axios.get(`${BASE_URL}/offers`)
 
-        setIssues(response.data.data);
+        setoOffer(response.data.data);
         console.log(response.data.data);
     }
     useEffect(() => {
-        getIssues()
+        getOffers()
     }, [])
 
     const addUser = async () => {
-        const response = await axios.post(`${BASE_URL}/user`)
+        const response = await axios.post(`${BASE_URL}/offers`)
         console.log(response.data.data);
         // setUsers(response.data.data);
     }
@@ -27,28 +28,29 @@ const HelpSupport = () => {
     return (
         <main>
             <div className={styles.header}>
-                <h2>Issues</h2>
+                <h2>Offers</h2>
                 <button className={styles.addButton + ' ' + styles.button} onClick={() => { }}>
                     <FontAwesomeIcon className={styles.icon} icon={faAdd} onClick={addUser} />
-                    Add New Issue</button>
+                    Add New Offer</button>
             </div>
             <div className={styles.users}>
-                {issues && issues.map((issue) => (
-                    <Issue key={issue._id} issue={issue} />
+                {offers && offers.map((offer) => (
+                    <Offer key={offer._id} offer={offer} />
                 ))}
             </div>
         </main>
     )
 }
 
-const Issue = ({ issue }) => {
+const Offer = ({ offer }) => {
 
     return (
         <div className={styles.listItemWrapper}>
             <div className={styles.listItem}>
+                <img className={styles.listImage} src={offer.offerImage} alt="logo" />
                 <div className={styles.listDetail}>
                     <p className={styles.subtitle}>
-                        <span><FontAwesomeIcon className={styles.icon} icon={faCommentDots} />{issue.message}</span>
+                        <span><FontAwesomeIcon className={styles.icon} icon={faCommentDots} />{offer.offer}</span>
                     </p>
                 </div>
             </div>
@@ -56,4 +58,4 @@ const Issue = ({ issue }) => {
     )
 }
 
-export default HelpSupport
+export default Offers

@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import styles from './Drawer.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandshake, faHome, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faHandshake, faHome, faPercent, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Drawer = () => {
   return (
@@ -18,6 +18,10 @@ const Drawer = () => {
       <li>
         <NavLink to='/help' className={({ isActive }) => isActive ? styles.active : ''}>
           <FontAwesomeIcon className={styles.icon} icon={faHandshake} /><span>Help</span></NavLink>
+      </li>
+      <li>
+        <NavLink to='/offers' className={({ isActive }) => isActive ? styles.active : ''}>
+          <FontAwesomeIcon className={styles.icon} icon={faPercent} /><span>Offers</span></NavLink>
       </li>
     </ul>
   )
