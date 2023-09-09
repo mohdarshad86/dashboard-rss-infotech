@@ -23,7 +23,6 @@
     text-align: center;
 }
 
-/* Style for the modal close button (optional) */
 .modal-close-button {
     position: absolute;
     top: 10px;
@@ -36,7 +35,6 @@
     padding: 4px;
 }
 
-/* Style for the form elements */
 form {
     display: flex;
     flex-direction: column;
